@@ -18,20 +18,20 @@ async def on_ready():
 
 
 @bot.tree.command(name='vouch', description='Vouch for someone with a message and star rating')
-async def vouch(interaction: discord.Interaction, message: str, moons: int):
-    if 1 <= moons <= 5:
+async def vouch(interaction: discord.Interaction, message: str, stars: int):
+    if 1 <= stars <= 5:
         vouch_data = {
             'user': interaction.user.name,
             'message': message,
-            'moons': moons,
+            'stars': stars,
             'date': datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')
         }
 
-        moon_emojis = ' :crescent_moon:' * moons
+        star_emojis = ' :star:' * stars
 
         embed = discord.Embed(
             title='Title',
-            description=f'{moon_emojis}',
+            description=f'{star_emojis}',
             color=0x66FFFF
         )
         embed.add_field(name='Message', value=message, inline=True)
