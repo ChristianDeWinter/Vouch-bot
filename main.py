@@ -18,13 +18,14 @@ async def on_ready():
 
 
 @bot.tree.command(name='vouch', description='Vouch for someone with a message and star rating')
-async def vouch(interaction: discord.Interaction, message: str, stars: int):
+async def vouch(interaction: discord.Interaction, message: str, stars: int, image_url: str):
     if 1 <= stars <= 5:
         vouch_data = {
             'user': interaction.user.name,
             'message': message,
             'stars': stars,
-            'date': datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')
+            'date': datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC'),
+            'image': image_url
         }
 
         star_emojis = ' :star:' * stars
