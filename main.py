@@ -41,6 +41,7 @@ async def vouch(interaction: discord.Interaction, message: str, stars: int, imag
         embed.add_field(name='Vouched by', value=f'{interaction.user.name}', inline=True)
         embed.add_field(name='Vouched at', value=vouch_data['date'], inline=True)
         embed.add_field(name='', value='', inline=False)
+        embed.add_field(name='Image/Video Proof:', value=vouch_data['image'], inline=True)
         embed.set_footer(text=f'Thank you for vouching! • {vouch_data["date"]}')
 
         await interaction.response.send_message(embed=embed)
