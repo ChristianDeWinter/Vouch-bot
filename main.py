@@ -18,7 +18,7 @@ async def on_ready():
 
 
 @bot.tree.command(name='vouch', description='Vouch for someone with a message and star rating')
-async def vouch(interaction: discord.Interaction, message: str, stars: int, image_url: str):
+async def vouch(interaction: discord.Interaction, message: str, stars: int, image_url: str=''):
     if 1 <= stars <= 5:
         vouch_data = {
             'user': interaction.user.name,
@@ -41,7 +41,11 @@ async def vouch(interaction: discord.Interaction, message: str, stars: int, imag
         embed.add_field(name='Vouched by', value=f'{interaction.user.name}', inline=True)
         embed.add_field(name='Vouched at', value=vouch_data['date'], inline=True)
         embed.add_field(name='', value='', inline=False)
-        embed.add_field(name='Image/Video Proof:', value=vouch_data['image'], inline=True)
+
+        if vouch_data['image'] is not None:
+            embed.set_image(url=vouch_data['image'])
+
+
         embed.set_footer(text=f'Thank you for vouching! • {vouch_data["date"]}')
 
         await interaction.response.send_message(embed=embed)
