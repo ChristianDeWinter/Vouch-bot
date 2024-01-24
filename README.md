@@ -28,4 +28,4 @@ python main.py
 
 *Happy Vouching!*
 
-![screenshot](Display message.png)
+![screenshot](https://github.com/ChristianDeWinter/Vouch-bot/blob/main/Display%20message.png)
