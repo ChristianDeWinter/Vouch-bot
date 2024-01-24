@@ -1,7 +1,5 @@
 # Discord Vouch Bot - PYTHON
 
-![Discord vouch Bot](Display message.png)
-
 ## Overview
 
 Welcome to the Discord Vouch Bot project! This Python-based bot is designed to streamline the vouch process within Discord servers. Whether you're managing a gaming community, a development team, or any other type of group, this bot aims to simplify the vouch and feedback loop.
@@ -29,3 +27,5 @@ python main.py
 ---
 
 *Happy Vouching!*
+
+![screenshot](Display message.png)
